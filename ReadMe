@@ -1,0 +1,2 @@
+# My akmeanss was not converging with the default values (was converging for higher k). 
+# So I removed the min and max values and calculated the values in evaluation.R
