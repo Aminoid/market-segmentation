@@ -11,19 +11,15 @@ In this project, we aim to find such market segments given social network data. 
 Two small datasets: `fb_caltech_small_edgelist.txt` and `fb_caltech_small_attrlist.csv`. This dataset contains a facebook network of a US university (given as an edgelist) with each node corresponding to a user profile having the following attributes: student/faculty status, gender, major, second major, dorm, and year information. For the similarity convenience, these attribute values have been converted into asymmetric binary variables. The original dataset, which we downsampled to 324 users, can be found [here][1].
 
 ## Procedure
-1. Implement the SAC-1 method described in the section-IV part-A in the [publication][2]. For the implementation, focus on section III and section IV part-A.
-
-2. Use either Python or R for your implementation. Your file should be called either sac1.py or sac1.R. Your code should take one argument as input, the alpha value, and produce a file called communities.txt as output. This should contain one community per line with vertex id’s separated by commas, e.g.,
+1. Implement the SAC-1 method described in the section-IV part-A in the [publication][2]. For the implementation, focus on section III and section IV part-A. The file is called `sac1.py`. It takes one argument as input, the alpha value, and produces a file called `communities.txt` as output which contains one community per line with vertex id’s separated by commas, e.g.,
 ```
 1,4,8,9,12,17,85
 2,7,25,66,97,45
 ```
 
-3. You should use the igraph package, which is available in both R and Python. In the paper, modularity is used as structural similarity metric. You may choose to use igraph’s built-in modularity function for this purpose.
-
-4. Use cosine similarity to measure attribute similarity.
-5. Limit the algorithm convergence to have a maximum of 15 iterations (this is an additional parameter that is not mentioned in the publication, but can be used in the implementation if it takes more than 15 iterations before convergence).
-6. Produce separate outputs for different values of α = 0, 0.5, and 1. Final output is saved in the directory under the names `communities_0.txt`, `communities_5.txt`, and `communities_1.txt`, respectively.
+2. Used cosine similarity to measure attribute similarity.
+3. Limit the algorithm convergence to have a maximum of 15 iterations (this is an additional parameter that is not mentioned in the publication, but can be used in the implementation if it takes more than 15 iterations before convergence).
+6. Produced separate outputs for different values of α = 0, 0.5, and 1. Final output is saved in the directory under the names `communities_0.txt`, `communities_5.txt`, and `communities_1.txt`, respectively.
 
 ## How to run
 1. `python sac1.py` to create the files.
